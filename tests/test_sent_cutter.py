@@ -1,4 +1,4 @@
-from text_processor.sent_cutter import SentCutter
+from text_preprocess.sent_cutter import SentCutter
 
 
 class TestSentCutter:
