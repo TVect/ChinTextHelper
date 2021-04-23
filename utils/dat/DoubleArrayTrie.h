@@ -1,0 +1,38 @@
+/*
+ * DoubleArrayTrie.h
+ *
+ *  Created on: 2018年6月21日
+ *      Author: wanyuan.chen
+ */
+
+#ifndef DOUBLEARRAYTRIE_H_
+#define DOUBLEARRAYTRIE_H_
+#include"dart.h"
+#include<string>
+#include<vector>
+#include<map>
+
+using namespace std;
+typedef Darts::DoubleArray DAT;
+class DoubleArrayTrie
+{
+public:
+	int build(const string& file_path,const string& s_split = " ");
+	int mapbuild(const map<string,string>& key2value);
+	int save(const string& file_path);
+	int open(const string& file_path);
+	int clear();
+	vector<pair<int,vector<pair<string,string> > > > all_match(const string& word);
+	vector<pair< int,pair<string,string> > > max_match(const string& word);
+	string match_replace(const string & word);
+private:
+	vector<string> values;
+	DAT dat;
+
+};
+
+
+
+
+
+#endif /* DOUBLEARRAYTRIE_H_ */
